@@ -128,5 +128,10 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# MY IGNORES
+
 # vscode library
 .vscode
+
+# my faces
+known_faces
