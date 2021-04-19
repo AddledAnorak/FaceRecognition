@@ -11,6 +11,9 @@ labels = {}
 with open('labels.pickle', "rb") as f:
     labels = pickle.load(f)
 
+# invert the labels
+labels = {value: key for (key, value) in labels.items()}
+
 print(labels)
 
 while True:
@@ -23,7 +26,8 @@ while True:
         roi_gray = gray_frame[y:y+h, x:x+h]
         label_id, confidence_level = recognizer.predict(roi_gray)
         cv2.rectangle(frame, (x,y), (x+w,y+h), (255, 0, 0), 2)
-        print(f"{label_id}: {confidence_level}")
+        if confidence_level >= 46 and confidence_level < 65:
+            print(f"{labels[label_id]}: {confidence_level}")
 
     if cv2.waitKey(1) == ord('q'):
         break
