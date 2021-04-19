@@ -135,3 +135,6 @@ dmypy.json
 
 # my faces
 known_faces
+
+labels.pickle
+recognition_model.yml
