@@ -1,5 +1,6 @@
 import cv2
 import pickle
+import time
 
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -28,7 +29,7 @@ while True:
         cv2.rectangle(frame, (x,y), (x+w,y+h), (255, 0, 0), 2)
         if confidence_level >= 40 and confidence_level < 65:
             tabs = '\t' * label_id
-            print(f"{tabs}{labels[label_id]}: {confidence_level}")
+            print(f"{tabs}{time.time()}:{labels[label_id]}: {confidence_level}")
 
     if cv2.waitKey(1) == ord('q'):
         break
