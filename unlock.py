@@ -19,6 +19,8 @@ person_freq = {key: 0 for key in labels}
 # invert the labels
 labels = {value: key for (key, value) in labels.items()}
 
+_ = input('ready? ')
+
 for i in range(NUM_TRIES):
     start_time = time.time()
 
