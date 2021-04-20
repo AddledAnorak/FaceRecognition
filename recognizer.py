@@ -26,8 +26,9 @@ while True:
         roi_gray = gray_frame[y:y+h, x:x+h]
         label_id, confidence_level = recognizer.predict(roi_gray)
         cv2.rectangle(frame, (x,y), (x+w,y+h), (255, 0, 0), 2)
-        if confidence_level >= 46 and confidence_level < 65:
-            print(f"{labels[label_id]}: {confidence_level}")
+        if confidence_level >= 40 and confidence_level < 65:
+            tabs = '\t' * label_id
+            print(f"{tabs}{labels[label_id]}: {confidence_level}")
 
     if cv2.waitKey(1) == ord('q'):
         break

@@ -138,3 +138,6 @@ known_faces
 
 labels.pickle
 recognition_model.yml
+papa_faces_raw
+raw_faces
+test.py
