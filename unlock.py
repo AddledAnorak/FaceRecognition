@@ -1,3 +1,5 @@
+NUM_TRIES = 5
+
 import time
 import cv2
 import pickle
@@ -9,7 +11,6 @@ recognizer.read("recognition_model.yml")
 cap = cv2.VideoCapture(0)
 labels = {}
 continue_loop = True
-NUM_TRIES = 5
 
 with open('labels.pickle', "rb") as f:
     labels = pickle.load(f)
